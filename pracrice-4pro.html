@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+  </head>
+  <style>
+    body {
+      font-family: sans-serif;
+      line-height: 1.5;
+    }
+    .section {
+      border: 1px solid;
+      width: 400px;
+    }
+
+    form {
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 10px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input {
+      padding: 4px;
+      font-family: inherit;
+    }
+    button {
+      display: block;
+      margin: 10px auto;
+      border: 2px solid;
+      background: #8162e5;
+      color: #fff;
+      font-size: 16px;
+      line-height: 20px;
+      padding: 16px 24px;
+      border-radius: 40px;
+      transition: all 250ms ease;
+      box-shadow: rgba(50, 50, 65, 0.08) 0px 8px 8px 0;
+      cursor: pointer;
+    }
+    button:hover,
+    button:focus {
+      background-color: #9c88dd;
+    }
+  </style>
+  <body>
+    <section class="section">
+      <h1>Welcome back</h1>
+
+      <form class="form_email" action="/submit">
+        <label for="email">Enter your email:</label>
+        <input
+          type="email"
+          placeholder="Email"
+          name="email"
+          id="user_email"
+          required
+        />
+      </form>
+      <form class="form_password" action="/submit">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          id="user_password"
+          minlength="8"
+          pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"
+          title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number."
+          required
+        />
+      </form>
+      <div>
+        <button type="submit" class="submit">Login</button>
+      </div>
+    </section>
+  </body>
+</html>
